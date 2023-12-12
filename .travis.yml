@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t anthoney28/docker-react-basics -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true anthoney8/docker-react-basics npm run test
